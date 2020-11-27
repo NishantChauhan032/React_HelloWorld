@@ -9,7 +9,7 @@ class App extends React.Component{
   constructor(){
     super()
     this.state = {
-      title: 'Hello From Capgemini Team!!'
+      userName: ''
     }
   }
 
@@ -18,12 +18,23 @@ class App extends React.Component{
     window.open(this.url , "_blank");
   }
 
+  onNameChange = (event) =>{
+    console.log("Value is ",event.target.value);
+    // set the title using setState method
+    this.setState({userName: event.target.value})
+  }
+
   render(){
     return(
+      <>
       <div>
-        <h1>{this.state.title}</h1>
+        <h1>Welcome {this.state.userName} into Capgemini Team!!</h1>
         <img src={logo} onClick={this.onClick} alt="Capgemini Logo!" />
       </div>
+      <div className="text-box">
+        <input onChange={this.onNameChange}/>
+      </div>
+      </>
     );
   }
 }

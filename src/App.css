@@ -15,3 +15,8 @@ img{
   width: 25%;
   cursor: pointer;
 }
+
+.text-box{
+  display: flex;
+  justify-content: center;
+}
